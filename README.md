@@ -12,13 +12,7 @@ R
 
 Packages
 --------
-png
-
-parallel
-
-doParallel
-
-Rcpp
+png, parallel, doParallel, Rcpp
 
 Author
 ------
