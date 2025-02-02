@@ -84,7 +84,7 @@ buddhabrot <- function(iterations = 1e6, size = 1000, max_iter = 1000) {
   # Normalize and save image
   points_matrix[points_matrix > 0] <- log(points_matrix[points_matrix > 0] + 1)
   img <- points_matrix / max(points_matrix)
-  writePNG(img, "Buddhabrot_BlackAndWhite.png")
+  writePNG(img, "Buddhabrot_BlackAndWhite_rcpp.png")
   
   elapsed <- difftime(Sys.time(), start_time, units = "secs")
   cat(sprintf("Elapsed time: %.2f seconds\n", elapsed))
