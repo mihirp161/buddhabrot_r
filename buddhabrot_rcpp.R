@@ -28,21 +28,21 @@ buddhabrot <- function(iterations = 1e6, size = 1000, max_iter = 1000) {
   cl <- makeCluster(num_cores)
   registerDoParallel(cl)
   
-  # Compile the escaped function on ALL workers
-  clusterEvalQ(cl, {
-    library(Rcpp)
-    Rcpp::cppFunction('
-      std::vector<std::complex<double>> escaped(std::complex<double> c, int max_iter = 1000) {
-        std::complex<double> z(0, 0);
-        std::vector<std::complex<double>> points;
-        for (int i = 0; i < max_iter; ++i) {
-          z = z * z + c;
-          if (std::abs(z) > 2) return points;
-          points.push_back(z);
-        }
-        return points;
-      }')
-  })
+  ## Compile the escaped function on ALL workers
+  #clusterEvalQ(cl, {
+  #  library(Rcpp)
+  #  Rcpp::cppFunction('
+  #    std::vector<std::complex<double>> escaped(std::complex<double> c, int max_iter = 1000) {
+  #      std::complex<double> z(0, 0);
+  #      std::vector<std::complex<double>> points;
+  #      for (int i = 0; i < max_iter; ++i) {
+  #        z = z * z + c;
+  #        if (std::abs(z) > 2) return points;
+  #       points.push_back(z);
+  #      }
+  #      return points;
+  #    }')
+  #})
   
   start_time <- Sys.time()
   
