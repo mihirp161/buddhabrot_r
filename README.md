@@ -20,7 +20,7 @@ Mihir Patel
 
 blog
 -----
-In-process
+[Buddhabrot - From Chaos to Cosmic Beauty](https://mihirp161.github.io/buddhabrot/)
 
 Reading Source
 ------
